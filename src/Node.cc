@@ -165,12 +165,14 @@ void Node::handleMessage(cMessage *msg)
                cout  << item << " " ;
            cout << endl;
 
-           if( !acks[mmsg->getSeq_nr()])
+           if( !acks[mmsg->getSeq_nr()] )
            {
+
             // Go-back N
                 // if not sent before because of the timeout [ Finding: Either, it is sent in a previous timeout or the lower was 0000 and this is contradictory ]
-                if ( codes[item - nbuffered] != "0000")
-                {
+              // if ( codes[item - nbuffered] != "0000")
+               if (mmsg->getSeq_nr() == (lower + 1) % (par("WS").intValue() + 1))
+               {
                      next_frame_to_send = lower;
                      item -= nbuffered ;
                      mmsg->setKind(-1);
@@ -178,7 +180,12 @@ void Node::handleMessage(cMessage *msg)
                      nbuffered = 0;
                      codes[item ] = "0000";
                      ready_to_send = true;
-                }
+
+                   }
+               else
+                   cout << "Ignore bardo " << endl;
+
+
            }
            else
            {
@@ -259,16 +266,20 @@ void Node::handleMessage(cMessage *msg)
             double loss_possibility = par("EL").doubleValue();
             volatile int rand = uniform (0, 1) * 10.0;
             cout << " rand is : " << rand << endl;
-            if (rand >= loss_possibility * 10.0 )
-            {
-               if (ackFrame->getKind() == 1)
-                   cout << "ack " << next_ack_to_send <<" sent at time:  " <<  simTime() << "and expected to arrive at " << par("PT").doubleValue() + par("TD").doubleValue() + simTime()<< endl;
-               else
-                   cout << "NACK " << endl;
 
-               sendDelayed(ackFrame, par("PT").doubleValue() + par("TD").doubleValue(), "out");
+            if (ackFrame->getKind() == 1){
+                if (rand >= loss_possibility * 10.0 )
+                {
 
+                       cout << "ack " << next_ack_to_send <<" sent at time:  " <<  simTime() << "and expected to arrive at " << par("PT").doubleValue() + par("TD").doubleValue() + simTime()<< endl;
+
+                   sendDelayed(ackFrame, par("PT").doubleValue() + par("TD").doubleValue(), "out");
+                }
+                else
+                    cout << "ack is lost" << endl;
             }
+
+
         else // else, not the expected frame
         {
             delete ackFrame;
@@ -284,12 +295,17 @@ void Node::handleMessage(cMessage *msg)
 
             // implement accumulative ack
             //while (between (lower, mmsg->getSeq_nr(), next_ack_to_send ) )
-            if( between (lower, mmsg->getSeq_nr(), next_frame_to_send ))
+           // if( between (lower, mmsg->getSeq_nr(), next_frame_to_send ))
+            if(mmsg->getSeq_nr() == (lower + 1) % (par("WS").intValue() + 1))
             {
+                acks[mmsg->getSeq_nr()] += 1;
                nbuffered -- ;
                lower = (lower + 1) % (par("WS").intValue() + 1);
             }
-            acks[mmsg->getSeq_nr() ] += 1;
+
+
+
+
             cout << "After ACK, The New Window:  lower:  " << lower << "Next frame to send: " << next_frame_to_send  << " nbuffered: " << nbuffered<< endl;
             if ( item < packets.size() )
             {

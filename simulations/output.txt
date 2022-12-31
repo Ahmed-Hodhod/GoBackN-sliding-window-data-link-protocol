@@ -1,0 +1,492 @@
+
+self msg at Time: 0
+At [0] Introducing channel error with code = [0000]
+Frame (if not lost) ($aaaa$) with seq_nr (0) and parity byte (00000000) is scheduled to arrive at  1.5
+
+self msg at Time: 0.5
+At [0.5] Introducing channel error with code = [0000]
+Frame (if not lost) ($b/$bbb$) with seq_nr (1) and parity byte (00001011) is scheduled to arrive at  2
+
+self msg at Time: 1
+At [1] Introducing channel error with code = [0000]
+Frame (if not lost) ($ccc/$/$c$) with seq_nr (2) and parity byte (00000000) is scheduled to arrive at  2.5
+
+0 arrived to the receiver at time :  1.5
+0 is the correct frame.  
+ rand is : 3
+ack 1 sent at time:  1.5and expected to arrive at 3
+
+self msg at Time: 1.5
+At [1.5] Introducing channel error with code = [0000]
+Frame (if not lost) ($d///$ddd$) with seq_nr (3) and parity byte (00001011) is scheduled to arrive at  3
+
+1 arrived to the receiver at time :  2
+1 is the correct frame.  
+ rand is : 1
+ack 2 sent at time:  2and expected to arrive at 3.5
+
+self msg at Time: 2
+Time Now : 2
+Not ready | item =  4 | nbuffered = 4
+
+2 arrived to the receiver at time :  2.5
+2 is the correct frame.  
+ rand is : 5
+ack 3 sent at time:  2.5and expected to arrive at 4
+
+Ack is recived with seq nr: 1lower before: 0 at time: 3
+After ACK, The New Window:  lower:  1Next frame to send: 4 nbuffered: 3
+
+3 arrived to the receiver at time :  3
+3 is the correct frame.  
+ rand is : 5
+ack 4 sent at time:  3and expected to arrive at 4.5
+
+self msg at Time: 3
+At [3] Introducing channel error with code = [0000]
+Frame (if not lost) ($/$eeee/$$) with seq_nr (4) and parity byte (00000000) is scheduled to arrive at  4.5
+
+Ack is recived with seq nr: 2lower before: 1 at time: 3.5
+After ACK, The New Window:  lower:  2Next frame to send: 0 nbuffered: 3
+
+self msg at Time: 3.5
+At [3.5] Introducing channel error with code = [0100]
+Frame (if not lost) ($aa$) with seq_nr (0) and parity byte (00000000) is scheduled to arrive at  5
+
+self msg at Time: 3.5
+Time Now : 3.5
+Not ready | item =  6 | nbuffered = 4
+
+Ack is recived with seq nr: 3lower before: 2 at time: 4
+After ACK, The New Window:  lower:  3Next frame to send: 1 nbuffered: 3
+
+self msg at Time: 4
+At [4] Introducing channel error with code = [1000]
+Frame (if not lost) (%bb$) with seq_nr (1) and parity byte (00000000) is scheduled to arrive at  5.5
+
+self msg at Time: 4
+Time Now : 4
+Not ready | item =  7 | nbuffered = 4
+
+Ack is recived with seq nr: 4lower before: 3 at time: 4.5
+After ACK, The New Window:  lower:  4Next frame to send: 2 nbuffered: 3
+
+4 arrived to the receiver at time :  4.5
+4 is the correct frame.  
+ rand is : 4
+ack 0 sent at time:  4.5and expected to arrive at 6
+
+self msg at Time: 4.5
+At [4.5] Introducing channel error with code = [0000]
+Frame (if not lost) ($cc$) with seq_nr (2) and parity byte (00000000) is scheduled to arrive at  6
+
+self msg at Time: 4.5
+Time Now : 4.5
+Not ready | item =  8 | nbuffered = 4
+
+self msg at Time: 5
+Time Now : 5
+Not ready | item =  8 | nbuffered = 4
+
+1 arrived to the receiver at time :  5.5
+1 is not correct.  
+ rand is : 1
+
+Ack is recived with seq nr: 0lower before: 4 at time: 6
+After ACK, The New Window:  lower:  0Next frame to send: 3 nbuffered: 3
+
+2 arrived to the receiver at time :  6
+2 is not correct.  
+ rand is : 4
+
+self msg at Time: 6
+At [6] Introducing channel error with code = [0001]
+Frame (if not lost) ($dd$) with seq_nr (3) and parity byte (00000000) is scheduled to arrive at  11.5
+
+self msg at Time: 6.5
+Time Now : 6.5
+Not ready | item =  9 | nbuffered = 4
+
+Timeout received at time:  10.5  On frame: 1
+1 1 1 1 1 
+Ignore the timeout of frame 1
+
+Timeout received at time:  11  On frame: 2
+1 0 1 1 1 
+Ignore the timeout of frame 2
+
+Timeout received at time:  11.5  On frame: 3
+1 0 0 1 1 
+Ignore the timeout of frame 3
+
+3 arrived to the receiver at time :  11.5
+3 is not correct.  
+ rand is : 4
+
+Timeout received at time:  12  On frame: 4
+1 0 0 0 1 
+Ignore the timeout of frame 4
+
+Timeout received at time:  13.5  On frame: 0
+1 0 0 0 0 
+Ignore the timeout of frame 0
+
+Timeout received at time:  14  On frame: 1
+0 0 0 0 0 
+
+self msg at Time: 14
+At [14] Introducing channel error with code = [0000]
+Frame (if not lost) ($aa$) with seq_nr (0) and parity byte (00000000) is scheduled to arrive at  15.5
+
+Timeout received at time:  14.5  On frame: 2
+0 0 0 0 0 
+Ignore bardo 
+
+self msg at Time: 14.5
+At [14.5] Introducing channel error with code = [1000]
+Frame (if not lost) (%bb$) with seq_nr (1) and parity byte (00000000) is scheduled to arrive at  16
+
+Timeout received at time:  15  On frame: 3
+0 0 0 0 0 
+Ignore bardo 
+
+self msg at Time: 15
+At [15] Introducing channel error with code = [0000]
+Frame (if not lost) ($cc$) with seq_nr (2) and parity byte (00000000) is scheduled to arrive at  16.5
+
+0 arrived to the receiver at time :  15.5
+0 is the correct frame.  
+ rand is : 2
+ack 1 sent at time:  15.5and expected to arrive at 17
+
+self msg at Time: 15.5
+At [15.5] Introducing channel error with code = [0001]
+Frame (if not lost) ($dd$) with seq_nr (3) and parity byte (00000000) is scheduled to arrive at  21
+
+1 arrived to the receiver at time :  16
+1 is not correct.  
+ rand is : 5
+
+self msg at Time: 16
+Time Now : 16
+Not ready | item =  9 | nbuffered = 4
+
+Timeout received at time:  16.5  On frame: 4
+0 0 0 0 0 
+Ignore bardo 
+
+2 arrived to the receiver at time :  16.5
+2 is not correct.  
+ rand is : 8
+
+Ack is recived with seq nr: 1lower before: 0 at time: 17
+After ACK, The New Window:  lower:  1Next frame to send: 4 nbuffered: 3
+
+self msg at Time: 17
+At [17] Introducing channel error with code = [0100]
+Frame (if not lost) ($ee$) with seq_nr (4) and parity byte (00000000) is scheduled to arrive at  18.5
+
+self msg at Time: 17.5
+Time Now : 17.5
+Not ready | item =  10 | nbuffered = 4
+
+3 arrived to the receiver at time :  21
+3 is not correct.  
+ rand is : 0
+
+Timeout received at time:  24.5  On frame: 1
+0 1 0 0 0 
+Ignore the timeout of frame 1
+
+Timeout received at time:  25  On frame: 2
+0 0 0 0 0 
+
+self msg at Time: 25
+At [25] Introducing channel error with code = [0000]
+Frame (if not lost) ($bb$) with seq_nr (1) and parity byte (00000000) is scheduled to arrive at  26.5
+
+Timeout received at time:  25.5  On frame: 3
+0 0 0 0 0 
+Ignore bardo 
+
+self msg at Time: 25.5
+At [25.5] Introducing channel error with code = [0000]
+Frame (if not lost) ($cc$) with seq_nr (2) and parity byte (00000000) is scheduled to arrive at  27
+
+Timeout received at time:  26  On frame: 4
+0 0 0 0 0 
+Ignore bardo 
+
+self msg at Time: 26
+At [26] Introducing channel error with code = [0001]
+Frame (if not lost) ($dd$) with seq_nr (3) and parity byte (00000000) is scheduled to arrive at  31.5
+
+1 arrived to the receiver at time :  26.5
+1 is the correct frame.  
+ rand is : 1
+ack 2 sent at time:  26.5and expected to arrive at 28
+
+self msg at Time: 26.5
+At [26.5] Introducing channel error with code = [0100]
+Frame (if not lost) ($ee$) with seq_nr (4) and parity byte (00000000) is scheduled to arrive at  28
+
+2 arrived to the receiver at time :  27
+2 is the correct frame.  
+ rand is : 2
+ack 3 sent at time:  27and expected to arrive at 28.5
+
+self msg at Time: 27
+Time Now : 27
+Not ready | item =  10 | nbuffered = 4
+
+Timeout received at time:  27.5  On frame: 0
+0 0 0 0 0 
+Ignore bardo 
+
+Ack is recived with seq nr: 2lower before: 1 at time: 28
+After ACK, The New Window:  lower:  2Next frame to send: 0 nbuffered: 3
+
+self msg at Time: 28
+At [28] Introducing channel error with code = [0000]
+Frame (if not lost) ($ta$) with seq_nr (0) and parity byte (00010101) is scheduled to arrive at  29.5
+
+Ack is recived with seq nr: 3lower before: 2 at time: 28.5
+After ACK, The New Window:  lower:  3Next frame to send: 1 nbuffered: 3
+
+self msg at Time: 28.5
+At [28.5] Introducing channel error with code = [0000]
+Frame (if not lost) ($tb$) with seq_nr (1) and parity byte (00010110) is scheduled to arrive at  30
+
+self msg at Time: 28.5
+Time Now : 28.5
+Not ready | item =  12 | nbuffered = 4
+
+self msg at Time: 29
+Time Now : 29
+Not ready | item =  12 | nbuffered = 4
+
+0 arrived to the receiver at time :  29.5
+0 is not correct.  
+ rand is : 8
+
+1 arrived to the receiver at time :  30
+1 is not correct.  
+ rand is : 2
+
+3 arrived to the receiver at time :  31.5
+3 is the correct frame.  
+ rand is : 2
+ack 4 sent at time:  31.5and expected to arrive at 33
+
+Ack is recived with seq nr: 4lower before: 3 at time: 33
+After ACK, The New Window:  lower:  4Next frame to send: 2 nbuffered: 3
+
+self msg at Time: 33
+At [33] Introducing channel error with code = [0000]
+Frame (if not lost) ($tc$) with seq_nr (2) and parity byte (00010111) is scheduled to arrive at  34.5
+
+self msg at Time: 33.5
+Time Now : 33.5
+Not ready | item =  13 | nbuffered = 4
+
+2 arrived to the receiver at time :  34.5
+2 is not correct.  
+ rand is : 8
+
+Timeout received at time:  35.5  On frame: 2
+0 0 1 1 1 
+Ignore the timeout of frame 2
+
+Timeout received at time:  36  On frame: 3
+0 0 0 1 1 
+Ignore the timeout of frame 3
+
+Timeout received at time:  36.5  On frame: 4
+0 0 0 0 1 
+Ignore the timeout of frame 4
+
+Timeout received at time:  37  On frame: 0
+0 0 0 0 0 
+
+self msg at Time: 37
+At [37] Introducing channel error with code = [0000]
+Frame (if not lost) ($ee$) with seq_nr (4) and parity byte (00000000) is scheduled to arrive at  38.5
+
+self msg at Time: 37.5
+At [37.5] Introducing channel error with code = [0000]
+Frame (if not lost) ($ta$) with seq_nr (0) and parity byte (00010101) is scheduled to arrive at  39
+
+self msg at Time: 38
+At [38] Introducing channel error with code = [0000]
+Frame (if not lost) ($tb$) with seq_nr (1) and parity byte (00010110) is scheduled to arrive at  39.5
+
+Timeout received at time:  38.5  On frame: 1
+0 0 0 0 0 
+Ignore bardo 
+
+4 arrived to the receiver at time :  38.5
+4 is the correct frame.  
+ rand is : 5
+ack 0 sent at time:  38.5and expected to arrive at 40
+
+self msg at Time: 38.5
+At [38.5] Introducing channel error with code = [0000]
+Frame (if not lost) ($tc$) with seq_nr (2) and parity byte (00010111) is scheduled to arrive at  40
+
+Timeout received at time:  39  On frame: 2
+0 0 0 0 0 
+Ignore bardo 
+
+0 arrived to the receiver at time :  39
+0 is the correct frame.  
+ rand is : 2
+ack 1 sent at time:  39and expected to arrive at 40.5
+
+self msg at Time: 39
+Time Now : 39
+Not ready | item =  13 | nbuffered = 4
+
+1 arrived to the receiver at time :  39.5
+1 is the correct frame.  
+ rand is : 9
+ack 2 sent at time:  39.5and expected to arrive at 41
+
+Ack is recived with seq nr: 0lower before: 4 at time: 40
+After ACK, The New Window:  lower:  0Next frame to send: 3 nbuffered: 3
+
+2 arrived to the receiver at time :  40
+2 is the correct frame.  
+ rand is : 5
+ack 3 sent at time:  40and expected to arrive at 41.5
+
+self msg at Time: 40
+At [40] Introducing channel error with code = [0011]
+Frame (if not lost) ($fa$) with seq_nr (3) and parity byte (00000111) is scheduled to arrive at  45.5
+
+Ack is recived with seq nr: 1lower before: 0 at time: 40.5
+After ACK, The New Window:  lower:  1Next frame to send: 4 nbuffered: 3
+
+self msg at Time: 40.5
+At [40.5] Introducing channel error with code = [1010]
+Frame (if not lost) (%fb$) with seq_nr (4) and parity byte (00000100) is scheduled to arrive at  42
+
+self msg at Time: 40.5
+Time Now : 40.5
+Not ready | item =  15 | nbuffered = 4
+
+Ack is recived with seq nr: 2lower before: 1 at time: 41
+After ACK, The New Window:  lower:  2Next frame to send: 0 nbuffered: 3
+
+self msg at Time: 41
+At [41] Introducing channel error with code = [1100]
+Frame (if not lost) ($fc$) with seq_nr (0) and parity byte (00000101) is scheduled to arrive at  42.5
+
+self msg at Time: 41
+Time Now : 41
+Not ready | item =  16 | nbuffered = 4
+
+Ack is recived with seq nr: 3lower before: 2 at time: 41.5
+After ACK, The New Window:  lower:  3Next frame to send: 1 nbuffered: 3
+
+self msg at Time: 41.5
+Time Now : 41.5
+Not ready | item =  16 | nbuffered = 3
+
+4 arrived to the receiver at time :  42
+4 is not correct.  
+ rand is : 0
+
+4 arrived to the receiver at time :  42.1
+4 is not correct.  
+ rand is : 4
+
+Timeout received at time:  43.5  On frame: 3
+1 1 1 1 0 
+Ignore the timeout of frame 3
+
+3 arrived to the receiver at time :  45.5
+3 is the correct frame.  
+ rand is : 1
+ack 4 sent at time:  45.5and expected to arrive at 47
+
+3 arrived to the receiver at time :  45.6
+3 is not correct.  
+ rand is : 3
+
+Ack is recived with seq nr: 4lower before: 3 at time: 47
+After ACK, The New Window:  lower:  4Next frame to send: 1 nbuffered: 2
+
+Timeout received at time:  47.5  On frame: 0
+1 1 1 0 1 
+Ignore the timeout of frame 0
+
+Timeout received at time:  48  On frame: 1
+0 1 1 0 1 
+Ignore the timeout of frame 1
+
+Timeout received at time:  48.5  On frame: 2
+0 0 1 0 1 
+Ignore the timeout of frame 2
+
+Timeout received at time:  49  On frame: 3
+0 0 0 0 1 
+Ignore bardo 
+
+Timeout received at time:  50.5  On frame: 4
+0 0 0 0 1 
+Ignore the timeout of frame 4
+
+Timeout received at time:  51  On frame: 0
+0 0 0 0 0 
+
+self msg at Time: 51
+At [51] Introducing channel error with code = [0000]
+Frame (if not lost) ($fb$) with seq_nr (4) and parity byte (00000100) is scheduled to arrive at  52.5
+
+Timeout received at time:  51.5  On frame: 1
+0 0 0 0 0 
+Ignore bardo 
+
+self msg at Time: 51.5
+At [51.5] Introducing channel error with code = [1100]
+Frame (if not lost) ($fc$) with seq_nr (0) and parity byte (00000101) is scheduled to arrive at  53
+
+self msg at Time: 52
+Time Now : 52
+Not ready | item =  16 | nbuffered = 2
+
+4 arrived to the receiver at time :  52.5
+4 is the correct frame.  
+ rand is : 4
+ack 0 sent at time:  52.5and expected to arrive at 54
+
+Ack is recived with seq nr: 0lower before: 4 at time: 54
+After ACK, The New Window:  lower:  0Next frame to send: 1 nbuffered: 1
+
+Timeout received at time:  61.5  On frame: 0
+1 0 0 0 0 
+Ignore the timeout of frame 0
+
+Timeout received at time:  62  On frame: 1
+0 0 0 0 0 
+
+self msg at Time: 62
+At [62] Introducing channel error with code = [0000]
+Frame (if not lost) ($fc$) with seq_nr (0) and parity byte (00000101) is scheduled to arrive at  63.5
+
+self msg at Time: 62.5
+Time Now : 62.5
+Not ready | item =  16 | nbuffered = 1
+
+0 arrived to the receiver at time :  63.5
+0 is the correct frame.  
+ rand is : 0
+ack 1 sent at time:  63.5and expected to arrive at 65
+
+Ack is recived with seq nr: 1lower before: 0 at time: 65
+After ACK, The New Window:  lower:  1Next frame to send: 1 nbuffered: 0
+
+Timeout received at time:  72.5  On frame: 1
+0 1 0 0 0 
+Ignore the timeout of frame 1
+

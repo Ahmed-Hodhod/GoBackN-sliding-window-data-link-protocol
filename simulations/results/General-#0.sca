@@ -1,8 +1,8 @@
 version 3
-run General-0-20221221-21:44:27-12968
+run General-0-20221228-17:49:01-3388
 attr configname General
-attr datetime 20221221-21:44:27
-attr datetimef 20221221-214427
+attr datetime 20221228-17:49:01
+attr datetimef 20221228-174901
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,16 +10,16 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network fall22_project.Network
-attr processid 12968
+attr processid 3388
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
-attr seedset 782
+attr seedset 758
 config network fall22_project.Network
 config record-eventlog true
 config **.starting_time 1
-config seed-set 782
+config seed-set 758
 
 par Network.hub.out1.channel typename "\"ned.IdealChannel\""
 par Network.hub.out0.channel typename "\"ned.IdealChannel\""
